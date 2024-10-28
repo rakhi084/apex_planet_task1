@@ -1,0 +1,238 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+}
+
+.recipe-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.recipe-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.recipe-image {
+    width: 100%;
+    height: 375PX;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px; /* Maintaining the same size */
+    margin: 10px 0;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff6347, #ff4500);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.ingredients-list,
+.steps-list {
+    text-align: left;
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.prep-info {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+    position: relative;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: #ff6347;
+    transition: width 0.5s;
+}
+
+@media (max-width: 600px) {
+    .recipe-card {
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Additional CSS for animations and transitions */
+
+.ingredients-list li,
+.steps-list li {
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.ingredients-list li:hover,
+.steps-list li:hover {
+    color: #ff6347;
+    text-decoration: underline;
+}
+
+.progress-bar.active::before {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ingredients-list li {
+    font-family: 'Georgia', serif; /* Changing the font */
+    font-size: 1.1em; /* Slightly increasing the font size */
+    color: #333; /* Setting a dark color for the text */
+    margin-bottom: 8px; /* Adding space between items */
+    padding-left: 20px; /* Adding padding to align text */
+    position: relative; /* For pseudo-element positioning */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transitions */
+}
+
+.ingredients-list li::before {
+    content: '•'; /* Adding a custom bullet point */
+    position: absolute;
+    left: 0;
+    color: #ff6347; /* Matching the theme color */
+    font-size: 1.2em; /* Slightly larger bullet point */
+}
+
+.ingredients-list li:hover {
+    color: #ff6347; /* Changing color on hover */
+    text-decoration: underline; /* Underlining text on hover */
+}
+
+
+
+
+
+.ingredients-list li,
+.steps-list li {
+    font-family: 'Georgia', serif; /* Changing the font */
+    font-size: 1.1em; /* Slightly increasing the font size */
+    color: #333; /* Setting a dark color for the text */
+    margin-bottom: 8px; /* Adding space between items */
+    padding-left: 20px; /* Adding padding to align text */
+    position: relative; /* For pseudo-element positioning */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transitions */
+}
+
+.ingredients-list li::before,
+.steps-list li::before {
+    content: '•'; /* Adding a custom bullet point for ingredients */
+    position: absolute;
+    left: 0;
+    color: #ff6347; /* Matching the theme color */
+    font-size: 1.2em; /* Slightly larger bullet point */
+}
+
+.steps-list {
+    list-style-type: decimal; /* Use decimal numbers for steps */
+    padding-left: 40px; /* Adding padding to align text */
+}
+
+.steps-list li {
+    counter-increment: step-counter;
+}
+
+.steps-list li::before {
+    content: counter(step-counter) '. '; /* Adding number before each step */
+    color: #ff6347; /* Matching the theme color */
+    font-size: 1.2em; /* Slightly larger number */
+    font-weight: bold;
+}
+
+.ingredients-list li:hover,
+.steps-list li:hover {
+    color: #ff6347; /* Changing color on hover */
+    text-decoration: underline; /* Underlining text on hover */
+}
+
+
+
+.prep-info {
+    font-family: 'Georgia', serif; /* Changing the font */
+    font-size: 1.1em; /* Setting the font size */
+    color: #333; /* Setting a dark color for the text */
+    background-color: #f9f9f9; /* Light background color for contrast */
+    padding: 15px; /* Adding padding for spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+    margin: 20px 0; /* Adding margin for spacing */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between the elements */
+    align-items: center; /* Aligning items in the center */
+}
+
+.prep-info span {
+    padding: 0 10px; /* Adding padding between the spans */
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.prep-info span:hover {
+    color: #ff6347; /* Changing color on hover to match the theme */
+}
+
